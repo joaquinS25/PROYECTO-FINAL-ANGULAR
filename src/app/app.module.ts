@@ -7,18 +7,24 @@ import { HeaderComponent } from './shared/layout/header/header.component';
 import { PageWrapperComponent } from './shared/layout/page-wrapper/page-wrapper.component';
 import { StudentsPageComponent } from './pages/students-page/students-page.component';
 import { MyMaterialModule } from './shared/modules/my-material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StudentDialogComponent } from './shared/components/student-dialog/student-dialog.component';
+import { FooterComponent } from './shared/layout/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PageWrapperComponent,
-    StudentsPageComponent
+    StudentsPageComponent,
+    StudentDialogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MyMaterialModule
+    MyMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

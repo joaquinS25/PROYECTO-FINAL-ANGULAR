@@ -3,7 +3,7 @@ export class Student {
         public id: number, 
         public nombre: string,
         public apellido: string,
-        public nota: number,
+        public nota: string,
         public esActivo: boolean
     ){}
 

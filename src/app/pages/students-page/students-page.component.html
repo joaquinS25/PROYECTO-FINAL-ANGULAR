@@ -1,6 +1,5 @@
-
-<button class="m-2" mat-flat-button color="primary">NUEVO ALUMNO</button>
-
+<h1>LISTA DE ALUMNOS</h1>
+<button (click)="(addStudent())"  class="m-2" mat-flat-button color="primary">NUEVO ALUMNO</button>
 <table mat-table [dataSource]="students">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -13,7 +12,7 @@
     <ng-container matColumnDef="apellido">
         <th mat-header-cell *matHeaderCellDef> APELLIDO </th>
         <td mat-cell *matCellDef="let element"> {{ element.apellido }} </td>
-    </ng-container>
+    </ng-container>  
     <ng-container matColumnDef="nota">
         <th mat-header-cell *matHeaderCellDef> NOTA </th>
         <td mat-cell *matCellDef="let element"> {{ element.nota }} </td>
@@ -25,7 +24,7 @@
     <ng-container matColumnDef="editar">
         <th mat-header-cell *matHeaderCellDef> EDITAR </th>
         <td mat-cell *matCellDef="let element">
-            <button mat-icon-button color="primary">
+            <button (click)="editStudent(element)" mat-icon-button color="primary">
                 <mat-icon>edit</mat-icon>
             </button>
         </td>
@@ -33,7 +32,7 @@
     <ng-container matColumnDef="eliminar">
         <th mat-header-cell *matHeaderCellDef> ELIMINAR </th>
         <td mat-cell *matCellDef="let element">
-            <button mat-icon-button color="warn">
+            <button (click)="removeStudent(element)" mat-icon-button color="warn">
                 <mat-icon>delete </mat-icon>
             </button>
         </td>
