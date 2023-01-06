@@ -10,6 +10,7 @@ import { MyMaterialModule } from './shared/modules/my-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentDialogComponent } from './shared/components/student-dialog/student-dialog.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
+import { PaginaCursosComponent } from './pages/pagina-cursos/pagina-cursos.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './shared/layout/footer/footer.component';
     PageWrapperComponent,
     StudentsPageComponent,
     StudentDialogComponent,
-    FooterComponent
+    FooterComponent,
+    PaginaCursosComponent
   ],
   imports: [
     BrowserModule,
