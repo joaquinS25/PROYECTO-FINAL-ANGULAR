@@ -16,7 +16,7 @@ export class PaginaCursosComponent {
 
   displayedColumns = ['id','nombre','profesor','editar','eliminar']
 
-  constructor(private readonly dialogService: MatDialog){}
+  /*constructor(private readonly dialogService: MatDialog){}
 
   addStudent(){
    const dialog = this.dialogService.open(StudentDialogComponent)
@@ -43,5 +43,5 @@ export class PaginaCursosComponent {
         this.students = this.students.map((stu) => stu.id === student.id?{...stu, ...data}:stu)
       }
     })
-  }
+  }*/
 }
