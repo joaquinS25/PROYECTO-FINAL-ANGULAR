@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StudentDialogComponent } from './shared/components/student-dialog/student-dialog.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { PaginaCursosComponent } from './pages/pagina-cursos/pagina-cursos.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PaginaCursosComponent } from './pages/pagina-cursos/pagina-cursos.compo
     BrowserModule,
     BrowserAnimationsModule,
     MyMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
