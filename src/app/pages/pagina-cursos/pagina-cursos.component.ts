@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Cursos } from 'src/app/models/cursos.models';
-import { CursosDialojComponent } from 'src/app/shared/components/cursos-dialoj/cursos-dialoj.component';
 
 @Component({
   selector: 'app-pagina-cursos',
