@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Cursos } from 'src/app/models/cursos.models';
+import { CursosDialojComponent } from 'src/app/shared/components/cursos-dialoj/cursos-dialoj.component';
 
 @Component({
   selector: 'app-pagina-cursos',
@@ -10,16 +11,16 @@ export class PaginaCursosComponent {
   students: Cursos[] = [
     new Cursos(1,"Fundamentos de algoritmos","Jorge Bojorquez"),
     new Cursos(2,"Calidad y pruebas de software","Luis Miguel"),
-    new Cursos(3,"Videjuegos y aplicacione smoviles","Jorge Narvaez"),
+    new Cursos(3,"Videjuegos y aplicaciones moviles","Jorge Narvaez"),
     new Cursos(4,"Redes 2","Augusto Vigilio"),  
   ]
 
-  displayedColumns = ['id','nombre','profesor','editar','eliminar']
+  /*displayedColumns = ['id','nombre','profesor','editar','eliminar']
 
-  /*constructor(private readonly dialogService: MatDialog){}
+  constructor(private readonly dialogService: MatDialog){}
 
   addStudent(){
-   const dialog = this.dialogService.open(StudentDialogComponent)
+   const dialog = this.dialogService.open(CursosDialojComponent)
 
    dialog.afterClosed().subscribe((value) =>{
     if (value){

@@ -12,6 +12,7 @@ import { StudentDialogComponent } from './shared/components/student-dialog/stude
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { PaginaCursosComponent } from './pages/pagina-cursos/pagina-cursos.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CursosDialojComponent } from './components/cursos-dialog/cursos-dialoj.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     StudentsPageComponent,
     StudentDialogComponent,
     FooterComponent,
-    PaginaCursosComponent
+    PaginaCursosComponent,
+    CursosDialojComponent
   ],
   imports: [
     BrowserModule,
