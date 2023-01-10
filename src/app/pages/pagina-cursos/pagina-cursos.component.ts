@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Cursos } from 'src/app/models/cursos.models';
+import { CursoDialogComponent } from 'src/app/shared/components/curso-dialog/curso-dialog.component';
 
 @Component({
   selector: 'app-pagina-cursos',
@@ -7,41 +9,41 @@ import { Cursos } from 'src/app/models/cursos.models';
   styleUrls: ['./pagina-cursos.component.scss']
 })
 export class PaginaCursosComponent {
-  students: Cursos[] = [
+  cursos: Cursos[] = [
     new Cursos(1,"Fundamentos de algoritmos","Jorge Bojorquez"),
     new Cursos(2,"Calidad y pruebas de software","Luis Miguel"),
     new Cursos(3,"Videjuegos y aplicaciones moviles","Jorge Narvaez"),
     new Cursos(4,"Redes 2","Augusto Vigilio"),  
   ]
 
-  /*displayedColumns = ['id','nombre','profesor','editar','eliminar']
+  displayedColumns = ['id','nombre','profesor','editar','eliminar']
 
   constructor(private readonly dialogService: MatDialog){}
 
-  addStudent(){
-   const dialog = this.dialogService.open(CursosDialojComponent)
+  addCurso(){
+   const dialog = this.dialogService.open(CursoDialogComponent)
 
    dialog.afterClosed().subscribe((value) =>{
     if (value){
-      const lastId = this.students[this.students.length - 1]?.id;
-      this.students = [...this.students, new Student(lastId+1, value.nombre, value.apellido, value.nota, true)];
+      const lastId = this.cursos[this.cursos.length - 1]?.id;
+      this.cursos = [...this.cursos, new Cursos(lastId+1, value.nombre, value.profesor)];
     }
    })
   }
 
-  removeStudent(student: Student){
-    this.students = this.students.filter((stu) => stu.id !== student.id);
+  removeCurso(curso: Cursos){
+    this.cursos = this.cursos.filter((cur) => cur.id !== curso.id);
   }
 
-  editStudent(student: Student){
-    const dialog = this.dialogService.open(StudentDialogComponent, {
-      data: student,
+  editCurso(curso: Cursos){
+    const dialog = this.dialogService.open(CursoDialogComponent, {
+      data: curso,
     })
 
     dialog.afterClosed().subscribe((data) =>{
       if (data){
-        this.students = this.students.map((stu) => stu.id === student.id?{...stu, ...data}:stu)
+        this.cursos = this.cursos.map((cur) => cur.id === curso.id?{...cur, ...data}:cur)
       }
     })
-  }*/
+  }
 }

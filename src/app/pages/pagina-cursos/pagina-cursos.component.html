@@ -1,5 +1,5 @@
 <h1>LISTA DE CURSOS</h1>
-<!--button (click)="(addStudent())"  class="m-2" mat-flat-button color="primary">NUEVO ALUMNO</button>-->
+<button (click)="addCurso()"  class="m-2" mat-flat-button color="primary">NUEVO CURSO</button>
 <table mat-table [dataSource]="cursos">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -16,17 +16,17 @@
     <ng-container matColumnDef="editar">
         <th mat-header-cell *matHeaderCellDef> EDITAR </th>
         <td mat-cell *matCellDef="let element">
-            <!--button (click)="editStudent(element)" mat-icon-button color="primary">
+            <button (click)="editCurso(element)" mat-icon-button color="primary">
                 <mat-icon>edit</mat-icon>
-            </button-->
+            </button>
         </td>
     </ng-container>
     <ng-container matColumnDef="eliminar">
         <th mat-header-cell *matHeaderCellDef> ELIMINAR </th>
         <td mat-cell *matCellDef="let element">
-            <!--button (click)="removeStudent(element)" mat-icon-button color="warn">
+            <button (click)="removeCurso(element)" mat-icon-button color="warn">
                 <mat-icon>delete </mat-icon>
-            </button-->
+            </button>
         </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

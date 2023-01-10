@@ -12,7 +12,8 @@ import { StudentDialogComponent } from './shared/components/student-dialog/stude
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { PaginaCursosComponent } from './pages/pagina-cursos/pagina-cursos.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CursosDialojComponent } from './components/cursos-dialog/cursos-dialoj.component';
+import { CursoDialogComponent } from './shared/components/curso-dialog/curso-dialog.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CursosDialojComponent } from './components/cursos-dialog/cursos-dialoj.
     StudentDialogComponent,
     FooterComponent,
     PaginaCursosComponent,
-    CursosDialojComponent
+    CursoDialogComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
