@@ -5,6 +5,7 @@ import { PaginaCursosComponent } from './pages/pagina-cursos/pagina-cursos.compo
 import { StudentsPageComponent } from './pages/students-page/students-page.component';
 import { PageWrapperComponent } from './shared/layout/page-wrapper/page-wrapper.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductsPageComponent } from './pages/products-page/products-page.component';
 
 const routes: Routes = [
   {
@@ -22,9 +23,13 @@ const routes: Routes = [
       {
         path: 'cursos',
         component: PaginaCursosComponent
+      },
+      {
+        path: 'products',
+        component: ProductsPageComponent
       }
     ]
-  }
+  } 
 ];
 
 @NgModule({

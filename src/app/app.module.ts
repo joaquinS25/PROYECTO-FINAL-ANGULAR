@@ -14,6 +14,7 @@ import { PaginaCursosComponent } from './pages/pagina-cursos/pagina-cursos.compo
 import { AppRoutingModule } from './app-routing.module';
 import { CursoDialogComponent } from './shared/components/curso-dialog/curso-dialog.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductsPageComponent } from './pages/products-page/products-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeComponent } from './pages/home/home.component';
     FooterComponent,
     PaginaCursosComponent,
     CursoDialogComponent,
-    HomeComponent
+    HomeComponent,
+    ProductsPageComponent
   ],
   imports: [
     BrowserModule,
