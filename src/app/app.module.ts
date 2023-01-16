@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CursoDialogComponent } from './shared/components/curso-dialog/curso-dialog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
     BrowserAnimationsModule,
     MyMaterialModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
