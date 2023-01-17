@@ -1,0 +1,24 @@
+<main>
+  <mat-card class="col-4">
+    <mat-card-header class="mb-3">
+      <mat-card-title>Iniciar sesión</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="flex flex-column" [formGroup]="form">
+        <mat-form-field appearance="outline">
+          <mat-label>Outline form field</mat-label>
+          <input formControlName="email" type="email" matInput placeholder="Placeholder">
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Outline form field</mat-label>
+          <input formControlName="password" type="password" matInput placeholder="Placeholder">
+          <mat-icon matSuffix>key</mat-icon>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="flex justify-content-end">
+      <button [disabled]="loading" mat-flat-button color="primary" (click)="login()">{{ loading ? 'Iniciando sesión' : 'Ingresar' }}</button>
+    </mat-card-actions>
+  </mat-card>
+</main>

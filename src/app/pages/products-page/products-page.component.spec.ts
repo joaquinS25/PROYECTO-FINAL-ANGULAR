@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ProductsPageComponent } from './products-page.component';
 import { ProductsService } from '../products/services/products.service';
+import { ProductsServiceMock } from 'src/app/mocks/products.service.mock';
 
 fdescribe('ProductsPageComponent', () => {
   let component: ProductsPageComponent;
@@ -13,6 +14,12 @@ fdescribe('ProductsPageComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ProductsPageComponent ],
       imports: [HttpClientTestingModule],
+      providers: [
+        {
+          provide: ProductsService,
+          useClase: ProductsServiceMock,
+        }
+      ]
     })
     .compileComponents();
 

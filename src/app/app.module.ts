@@ -16,6 +16,8 @@ import { CursoDialogComponent } from './shared/components/curso-dialog/curso-dia
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from '../app/auth/pages/login-page/login-page.component';
+//import { LoginPageComponent } from './auth/login-page/login-page.component';
 
 @NgModule({
   declarations: [
