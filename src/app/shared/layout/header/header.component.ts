@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+
+  /*logOut() {
+    localStorage.removeItem('token');
+    this.store.dispatch(unsetAuthenticatedUser());
+    this.router.navigate(['auth', 'login']);
+  }*/
 }

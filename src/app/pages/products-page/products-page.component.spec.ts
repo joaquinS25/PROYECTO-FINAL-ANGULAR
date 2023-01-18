@@ -9,6 +9,7 @@ fdescribe('ProductsPageComponent', () => {
   let fixture: ComponentFixture<ProductsPageComponent>;
   let productsService: ProductsService;
   let spyLoadProducts: jasmine.Spy;
+  let spyCreateProducts: jasmine.Spy;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -27,6 +28,7 @@ fdescribe('ProductsPageComponent', () => {
     component = fixture.componentInstance;
     productsService = TestBed.inject(ProductsService)
     spyLoadProducts = spyOn(productsService, 'loadProducts').and.callThrough();
+    spyCreateProducts = spyOn(productsService, 'createProduct').and.callThrough();
     fixture.detectChanges();
   });
 
@@ -35,8 +37,28 @@ fdescribe('ProductsPageComponent', () => {
   });
 
   it('Debe cargar los productos al inicio', () => {
-    component.ngOnInit();
-     
+    component.ngOnInit();  
     expect(spyLoadProducts).toHaveBeenCalled()
+  })
+
+  it('Debe agregar un usuario', () => {
+    component.form.patchValue({
+      name: 'Nombre de prueba',
+      description: 'Prueba descripcion',
+    });  
+    component.createProduct(); 
+    expect(spyCreateProducts).toHaveBeenCalledWith(component.form.value);
+  })
+
+  it('NO debe agregar un usuario si el formulario es invalido', () => {
+    const alertSpy = spyOn(window, 'alert').and.callThrough()
+    component.form.patchValue({
+      name: '',
+      description: '',
+    });
+    expect(component.form.invalid).toBeTrue();
+    component.createProduct();
+    expect(spyCreateProducts).not.toHaveBeenCalledWith(component.form.value);       
+    expect(alertSpy).toHaveBeenCalled();
   })
 });

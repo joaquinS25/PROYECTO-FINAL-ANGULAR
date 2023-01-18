@@ -12,8 +12,8 @@ import { Subject, takeUntil } from 'rxjs';
 export class LoginPageComponent implements OnDestroy {
   public loading = false
   public form = new FormGroup({
-    email: new FormControl('pastojua25@gmail.com', [Validators.required]),
-    password: new FormControl('joaquin1625', [Validators.required]),
+    email: new FormControl('eve.holt@reqres.in', [Validators.required]),
+    password: new FormControl('cityslicka', [Validators.required]),
   })
   private destroyed$ = new Subject();
 
@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnDestroy {
     private readonly router: Router,
   ) {
     this.sessionService.user$.pipe(takeUntil(this.destroyed$)).subscribe((user) => {
-      if (user) this.router.navigate(['Home', ''])
+      if (user) this.router.navigate(['home'])
     });
   }
 

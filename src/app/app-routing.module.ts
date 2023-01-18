@@ -13,11 +13,11 @@ const routes: Routes = [
     loadChildren:  () => import('./auth/auth.module').then((m) => m.AuthModule)
   },
   {
-    path: '',
+    path: 'home',
     component: PageWrapperComponent,
     children: [
       {
-        path: 'Home',
+        path: '',
         component: HomeComponent
       },
       {
@@ -33,7 +33,8 @@ const routes: Routes = [
         component: ProductsPageComponent
       }
     ]
-  } 
+  },
+  {path: '', redirectTo:'login', pathMatch:'full'},
 ];
 
 @NgModule({

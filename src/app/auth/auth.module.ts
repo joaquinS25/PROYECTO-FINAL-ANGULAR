@@ -6,6 +6,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { HomeComponent } from '../pages/home/home.component';
 
 
 
