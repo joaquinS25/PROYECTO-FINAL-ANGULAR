@@ -9,11 +9,15 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
 
 const routes: Routes = [
   {
+    path: 'login',
+    loadChildren:  () => import('./auth/auth.module').then((m) => m.AuthModule)
+  },
+  {
     path: '',
     component: PageWrapperComponent,
     children: [
       {
-        path: '',
+        path: 'Home',
         component: HomeComponent
       },
       {
