@@ -12,12 +12,10 @@ export interface Product {
 export interface IProductsService {
   products$: Observable<Product[]>;
   loadProducts(): void;
-  createProducts(): void;     
+  createProduct(data: Pick<Product, 'description' | 'name'>): void;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+
 export class ProductsService implements IProductsService{
   private readonly baseUrl = 'https://63c54104e1292e5bea1eae2c.mockapi.io';
   private products =  new BehaviorSubject<Product[]>([])
