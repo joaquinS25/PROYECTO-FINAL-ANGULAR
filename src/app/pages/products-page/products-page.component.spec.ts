@@ -44,7 +44,7 @@ fdescribe('ProductsPageComponent', () => {
   it('Debe agregar un usuario', () => {
     component.form.patchValue({
       name: 'Nombre de prueba',
-      description: 'Prueba descripcion',
+      descripcion: 'Prueba descripcion',
     });  
     component.createProduct(); 
     expect(spyCreateProducts).toHaveBeenCalledWith(component.form.value);
@@ -54,7 +54,7 @@ fdescribe('ProductsPageComponent', () => {
     const alertSpy = spyOn(window, 'alert').and.callThrough()
     component.form.patchValue({
       name: '',
-      description: '',
+      descripcion: '',
     });
     expect(component.form.invalid).toBeTrue();
     component.createProduct();
