@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { User } from "src/app/models/user.model";
-import { setAuthenticatedUser } from "./auth.actions";
+import { setAuthenticatedUser, unsetAuthenticatedUser } from "./auth.actions";
 
 export interface AuthState {
     authenticatedUser: User | null;
@@ -17,5 +17,6 @@ export const authReducer = createReducer(
             ...oldState,
             authenticatedUser: payLoad.authenticatedUser
         }
-    })
+    }),
+    on(unsetAuthenticatedUser, (oldState) => ({...oldState, authenticatedUser: null})) 
 );   
