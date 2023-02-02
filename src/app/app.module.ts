@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -16,6 +16,9 @@ import { CursoDialogComponent } from './shared/components/curso-dialog/curso-dia
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { appReducer } from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -30,15 +33,17 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ProductsPageComponent
   ],
-  imports: [
+  imports: [    
     BrowserModule,
     BrowserAnimationsModule,
     MyMaterialModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule,    
+    StoreModule.forRoot(appReducer, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }   
