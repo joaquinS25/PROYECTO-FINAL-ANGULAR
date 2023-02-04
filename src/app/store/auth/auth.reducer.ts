@@ -1,4 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
+import produce from "immer";
 import { User } from "src/app/models/user.model";
 import { setAuthenticatedUser, unsetAuthenticatedUser } from "./auth.actions";
 
@@ -12,11 +13,14 @@ const initialState: AuthState = {
 
 export const authReducer = createReducer(
     initialState,
-    on(setAuthenticatedUser, (oldState, payLoad) => {
-        return {
+    on(setAuthenticatedUser, (state, {authenticatedUser }) => {
+        /*return {
             ...oldState,
             authenticatedUser: payLoad.authenticatedUser
-        }
+        }*/
+        return produce(state, draft => {
+            draft.authenticatedUser = authenticatedUser
+        })
     }),
-    on(unsetAuthenticatedUser, (oldState) => ({...oldState, authenticatedUser: null})) 
-);   
+    on(unsetAuthenticatedUser, (state) => ({...state, authenticatedUser: null})) 
+)

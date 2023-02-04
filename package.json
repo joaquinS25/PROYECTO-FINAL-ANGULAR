@@ -23,6 +23,7 @@
     "@ngrx/store": "^15.1.0",
     "@ngrx/store-devtools": "^15.2.1",
     "bootstrap": "^5.2.3",
+    "immer": "^9.0.19",
     "primeflex": "^3.3.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
