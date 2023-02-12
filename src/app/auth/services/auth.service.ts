@@ -41,7 +41,6 @@ export class AuthService {
               data.avatar
             )
         ),
-       // tap((user) => this.sessionService.setUser(user))
         tap(
           (user) => this.store.dispatch(
             setAuthenticatedUser({

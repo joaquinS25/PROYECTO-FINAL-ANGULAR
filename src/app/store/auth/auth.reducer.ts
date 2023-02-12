@@ -14,10 +14,6 @@ const initialState: AuthState = {
 export const authReducer = createReducer(
     initialState,
     on(setAuthenticatedUser, (state, {authenticatedUser }) => {
-        /*return {
-            ...oldState,
-            authenticatedUser: payLoad.authenticatedUser
-        }*/
         return produce(state, draft => {
             draft.authenticatedUser = authenticatedUser
         })
