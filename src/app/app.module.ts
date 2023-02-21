@@ -20,6 +20,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducer } from './store/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
+import { AppStoreModule } from './app-store.module';
 
 @NgModule({
   declarations: [
@@ -42,9 +43,7 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     HttpClientModule,    
     StoreModule.forRoot(appReducer, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
+    AppStoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
