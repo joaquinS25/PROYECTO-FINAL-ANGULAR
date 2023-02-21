@@ -1,1 +1,36 @@
-<p>users-page works!</p>
+
+<table mat-table [dataSource]="[]">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="avatar">
+        <th mat-header-cell *matHeaderCellDef>Avatar</th>
+        <td mat-cell *matCellDef="let row">
+            <img [src]="row.avatar" alt="avatar"/>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="first_name">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let row">{{ row.first_name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="last_name">
+        <th mat-header-cell *matHeaderCellDef>apellido</th>
+        <td mat-cell *matCellDef="let row">{{ row.last_name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let row">{{ row.email }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<mat-paginator
+    (page)="0"
+    [pageSizeOptions]="[10]"
+    [length]="0"
+    [pageSize]="0"
+    aria-label="Select page of GitHub search results"
+></mat-paginator>

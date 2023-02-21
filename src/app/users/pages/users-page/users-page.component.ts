@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./users-page.component.scss']
 })
 export class UsersPageComponent {
-
+ public displayedColumns = ['id', 'avatar', 'firs_name','last_name','email'];
 }
