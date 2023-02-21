@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { UsersRoutingModule } from './users-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { UsersPageComponent } from './pages/users-page/users-page.component';
     UsersPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    UsersRoutingModule,
   ]
 })
 export class UsersModule { }
