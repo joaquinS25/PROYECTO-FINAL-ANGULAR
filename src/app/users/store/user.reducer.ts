@@ -6,10 +6,12 @@ export const userFeatureKey = 'user';
 
 export interface State {
     data: User[]
+    totalUsers: number;
 }
 
 export const initialState: State = {
     data: [],
+    totalUsers: 0,
 };
 
 export const reducer = createReducer(
@@ -20,6 +22,7 @@ export const reducer = createReducer(
     return {
         ...state,
         data: action.data,
+        totalUsers: action.totalUsers,   
       }
   }),
   on(UserActions.loadUsersFailure, (state, action) => state),

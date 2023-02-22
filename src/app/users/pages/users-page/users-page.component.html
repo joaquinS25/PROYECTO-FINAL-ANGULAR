@@ -29,8 +29,8 @@
 
 <mat-paginator
     (page)="onPageChange($event)"
-    [pageSizeOptions]="[10]"
-    [length]="30"
-    [pageSize]="30"
+    [pageSizeOptions]="perPageOptions"
+    [length]="12"
+    [pageSize]="perPage"
     aria-label="Select page of GitHub search results"
 ></mat-paginator>

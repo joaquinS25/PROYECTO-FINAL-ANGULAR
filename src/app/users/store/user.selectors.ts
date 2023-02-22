@@ -9,3 +9,8 @@ export const selectUsersArray = createSelector(
   selectUserState,
   (usersState) => usersState.data
 );
+
+export const selectTotalUsersNumber = createSelector(
+  selectUserState,
+  (usersState) => usersState.data
+);

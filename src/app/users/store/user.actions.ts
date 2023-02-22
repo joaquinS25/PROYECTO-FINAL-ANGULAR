@@ -8,7 +8,7 @@ export const loadUsers = createAction(
 
 export const loadUsersSuccess = createAction(
   '[User] Load Users Success',
-  props<{ data: User[] }>()
+  props<{ data: User[], totalUsers: number; }>()
 );
 
 export const loadUsersFailure = createAction(

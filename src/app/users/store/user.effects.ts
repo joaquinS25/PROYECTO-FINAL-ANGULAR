@@ -32,7 +32,10 @@ export class UserEffects {
       concatMap((action) =>
         /** An EMPTY observable only emits completion. Replace with your own observable API request */
         this.getUsersFromApi(action.page, action.per_page).pipe(
-          map(response => UserActions.loadUsersSuccess({ data: response.data })),
+          map(response => UserActions.loadUsersSuccess({ 
+            data: response.data,
+            totalUsers: response.total,
+          })),
           catchError(error => of(UserActions.loadUsersFailure({ error }))))
       )
     );
