@@ -1,5 +1,5 @@
 
-<table mat-table [dataSource]="[]">
+<table mat-table [dataSource]="users">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>#</th>
         <td mat-cell *matCellDef="let row">{{ row.id }}</td>
@@ -28,9 +28,9 @@
 </table>
 
 <mat-paginator
-    (page)="0"
+    (page)="onPageChange($event)"
     [pageSizeOptions]="[10]"
-    [length]="0"
-    [pageSize]="0"
+    [length]="30"
+    [pageSize]="30"
     aria-label="Select page of GitHub search results"
 ></mat-paginator>

@@ -1,12 +1,14 @@
 import { createAction, props } from '@ngrx/store';
+import { User } from 'src/app/models/user.model';
 
 export const loadUsers = createAction(
-  '[User] Load Users'
+  '[User] Load Users',
+  props<{ page: number; per_page: number; }>()
 );
 
 export const loadUsersSuccess = createAction(
   '[User] Load Users Success',
-  props<{ data: any }>()
+  props<{ data: User[] }>()
 );
 
 export const loadUsersFailure = createAction(

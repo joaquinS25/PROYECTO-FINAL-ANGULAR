@@ -16,7 +16,12 @@ export const reducer = createReducer(
   initialState,
 
   on(UserActions.loadUsers, state => state),
-  on(UserActions.loadUsersSuccess, (state, action) => state),
+  on(UserActions.loadUsersSuccess, (state, action) => {
+    return {
+        ...state,
+        data: action.data,
+      }
+  }),
   on(UserActions.loadUsersFailure, (state, action) => state),
 
 );
