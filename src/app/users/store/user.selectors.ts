@@ -12,5 +12,5 @@ export const selectUsersArray = createSelector(
 
 export const selectTotalUsersNumber = createSelector(
   selectUserState,
-  (usersState) => usersState.data
+  (usersState) => usersState.totalUsers
 );
